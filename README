@@ -1,3 +1,3 @@
 - Ícones da NavBar são apenas para teste, precisamos de outros melhores (é possível usar imagens ao invés de ícones do Expo).
-- Tema da aplicação iniciado, definir as outras cores e ajudar tamanhos de fonte se necessário.
+- Tema da aplicação iniciado, definir as outras cores e ajustar tamanhos de fonte se necessário.
 - Criar service api para envio dos e-mails e reprodutor de vídeo. Já instalei a biblioteca dotenv e criei os arquivos .env e de tipagem.
