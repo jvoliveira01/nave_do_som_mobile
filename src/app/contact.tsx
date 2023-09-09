@@ -2,10 +2,10 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import Typography from "../components/shared/Typography";
 import Box from "../components/shared/Box";
-import { useEffect, useState } from "react";
-import * as MailComposer from 'expo-mail-composer';
+import { useState } from "react";
 import { Button, Text, TextInput } from "react-native";
 import { api } from "../services/api";
+import NetInfo from '@react-native-community/netinfo'
 
 type Form = {
   name: string;
@@ -28,6 +28,13 @@ const Contact = () => {
     return 1;
   };
 
+  const checkInternetConnection = () => {
+    const isConnected = NetInfo.addEventListener(state => {
+      return state.isConnected;
+    })
+    return isConnected;
+  } 
+
   const sendMail = async () => {
     if (!formFields.name || !formFields.phone || !formFields.email) {
       return alert("Preencha todos os campos.");
@@ -35,10 +42,13 @@ const Contact = () => {
     if (!emailValidator(formFields.email)) {
       return alert("Informe um e-mail correto/válido.");
     }
-
+    if (!checkInternetConnection){
+      return alert("É necessário conexão com internet para enviar o email! Tente novamente mais tarde.")
+    }
+    
     try {
       //setLoading(true)
-      await api.post('/email',{
+      const response = await api.post('/email',{
         body: formFields
       })
 
