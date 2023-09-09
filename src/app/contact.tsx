@@ -48,7 +48,7 @@ const Contact = () => {
     
     try {
       //setLoading(true)
-      const response = await api.post('/email',{
+      await api.post('/email',{
         body: formFields
       })
 
