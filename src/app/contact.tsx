@@ -1,11 +1,11 @@
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
-import Typography from "../components/shared/Typography";
 import Box from "../components/shared/Box";
 import { useState } from "react";
-import { Button, Text, TextInput } from "react-native";
-import { api } from "../services/api";
-import NetInfo from '@react-native-community/netinfo'
+import { Button, TextInput } from "react-native";
+import NetInfo from '@react-native-community/netinfo';
+import * as MailComposer from 'expo-mail-composer';
+import {EMAIL_NAVE_DO_SOM} from '@env';
 
 type Form = {
   name: string;
@@ -45,11 +45,20 @@ const Contact = () => {
     if (!checkInternetConnection){
       return alert("É necessário conexão com internet para enviar o email! Tente novamente mais tarde.")
     }
-    
     try {
-      //setLoading(true)
-      await api.post('/email',{
-        body: formFields
+      const htmlMail = `<strong>Novo e-mail enviado do aplicativo</strong> <br /> <strong>Remetente:</strong> ${
+        formFields.name
+      } <br /> <strong>Telefone para contato:</strong> ${formFields.phone} <br /> <strong>E-mail:</strong> ${
+        formFields.email
+      } <br /> <strong>Assunto:</strong> ${
+        formFields.matter !== "" ? formFields.matter : "REMETENTE NÃO INFORMOU ASSUNTO."
+      } `;
+
+      MailComposer.composeAsync({
+        subject: "EMAIL DO APLICATIVO",
+        body: htmlMail,
+        isHtml: true,
+        recipients: [EMAIL_NAVE_DO_SOM]        
       })
 
       setFormFields({
@@ -58,9 +67,8 @@ const Contact = () => {
         email: "",
         matter: "",
       });
+      alert('Email enviado com sucesso!')
 
-      //setLoading(false)
-      alert("Email enviado com sucesso");
     } catch (err) {
       alert(err);
     }
