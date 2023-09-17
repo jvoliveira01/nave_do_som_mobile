@@ -27,7 +27,10 @@ const App = () => {
         backgroundColor={appTheme.colors.primary[500]}
         style="inverted"
       />
-      <Stack screenOptions={{ headerShown: false }}>
+      <Stack screenOptions={{ 
+        headerShown: false, 
+        animation: "none"
+      }}>
         <Stack.Screen name="index" />
         <Stack.Screen name="about" />
         <Stack.Screen name="contact" />
