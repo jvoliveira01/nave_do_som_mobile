@@ -2,6 +2,7 @@ import { View, ScrollView, Dimensions } from "react-native";
 import { styles } from "../../../styles";
 import Typography from "../../shared/Typography";
 import Image from "../../shared/Image";
+import ListItem from "../../shared/ListItem";
 
 const AboutUsScreen = () => {
   const picture = require("../../../../assets/images/surgimento.png");
@@ -44,7 +45,7 @@ const AboutUsScreen = () => {
           style={ styles.aboutUsMainContainerText }
         />
       
-        <View style={{ borderWidth: 1, borderColor: "white", padding: 15 }}>
+        <View style={{ borderWidth: 1, borderColor: "white", padding: 16, borderRadius: 8 }}>
           <View style={ styles.aboutUsMissionContainer }>
             <Typography text="Nossa Missão" type="h" style={{textAlign: "center", paddingBottom: 12}}/>
             <Typography 
@@ -52,7 +53,14 @@ const AboutUsScreen = () => {
               style={{ textAlign: "justify", paddingBottom: 12 }}
             />
           </View>
-          <Typography text="Valores Que Prezamos" type="h" />
+          <Typography text="Valores Que Prezamos" type="h" style={{textAlign: "center", paddingVertical: 12}} />
+          <View style={styles.aboutUsListContainer}>
+            <ListItem text="Inovação"/>
+            <ListItem text="Ética e compromisso"/>
+            <ListItem text="Profissionalismo"/>
+            <ListItem text="Excelência"/>
+            <ListItem text="Satisfação do cliente e do público, nosso maior objetivo"/>
+          </View>
         </View>
       </View>
     </ScrollView>

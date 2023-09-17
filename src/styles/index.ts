@@ -130,8 +130,9 @@ export const styles = StyleSheet.create({
   aboutUsMainContainer: {
     width,
     alignItems: "center",
-    paddingHorizontal: 15,
-    paddingTop: 12    
+    paddingHorizontal: 16,
+    paddingTop: 12,
+    paddingBottom: 16  
   },
 
   aboutUsMainContainerText: {
@@ -142,5 +143,28 @@ export const styles = StyleSheet.create({
   aboutUsMissionContainer: {
     borderBottomWidth: 1,
     borderColor: "white"
+  },
+
+  aboutUsListContainer: {
+    paddingTop: 2  
+  },
+
+  listItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+
+  listItemBullet: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: 'white',
+  },
+
+  listItemText: {
+    color: 'white',
+    textAlign: 'left',
+    marginLeft: 12  
   }
 });
