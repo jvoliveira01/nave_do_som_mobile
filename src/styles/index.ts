@@ -126,4 +126,21 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
     paddingRight: 10,
   },
+
+  aboutUsMainContainer: {
+    width,
+    alignItems: "center",
+    paddingHorizontal: 15,
+    paddingTop: 12    
+  },
+
+  aboutUsMainContainerText: {
+    textAlign: "justify",
+    paddingBottom: 12
+  },
+
+  aboutUsMissionContainer: {
+    borderBottomWidth: 1,
+    borderColor: "white"
+  }
 });
