@@ -6,6 +6,7 @@ import { Button, TextInput } from "react-native";
 import NetInfo from '@react-native-community/netinfo';
 import * as MailComposer from 'expo-mail-composer';
 import {EMAIL_NAVE_DO_SOM} from '@env';
+import ContactScreen from "../components/Pages/Contact";
 
 type Form = {
   name: string;
@@ -77,7 +78,7 @@ const Contact = () => {
   return (
     <Box>
       <Header />
-      <TextInput
+      {/*<TextInput
         placeholder="Nome"
         value={formFields.name}
         onChangeText={(text) => {
@@ -126,7 +127,8 @@ const Contact = () => {
           })
         }}
       />
-      <Button onPress={sendMail} title="ENVIAR"/>
+      <Button onPress={sendMail} title="ENVIAR"/>*/}
+      <ContactScreen />
       <NavBar />
     </Box>
   );

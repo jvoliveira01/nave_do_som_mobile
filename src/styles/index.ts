@@ -166,5 +166,26 @@ export const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'left',
     marginLeft: 12  
+  },
+
+  contactMainContainer: {
+    width,
+    alignItems: "center",
+    paddingHorizontal: 16,
+    paddingTop: 12,
+    paddingBottom: 16  
+  },
+
+  contactContent: {
+    width: '100%',
+    paddingTop: 24
+  },
+
+  contactInfoContainer: {
+    width: '100%',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    marginBottom: 24
   }
 });
