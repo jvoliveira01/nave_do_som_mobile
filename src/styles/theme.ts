@@ -9,12 +9,14 @@ const appTheme = {
     secondary: {
       50: "#fff",
       100: "#787878",
+      200: "#1f1f1f",
       900: "#000",
     },
+    bgTranslucent: "#000000b9",
   },
   fontSizes: {
     caption: RFValue(11),
-    p: RFValue(15),
+    p: RFValue(16),
     h: RFValue(20),
   },
   fonts: {

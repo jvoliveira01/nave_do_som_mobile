@@ -57,6 +57,7 @@ const NavBar = () => {
             text={item.name}
             type="caption"
             style={{
+              fontFamily: appTheme.fonts.SemiBold,
               color:
                 routeName === item.routeName
                   ? appTheme.colors.primary[50]

@@ -6,6 +6,7 @@ const { width } = Dimensions.get("window");
 
 export const styles = StyleSheet.create({
   box: {
+    backgroundColor: appTheme.colors.secondary[200],
     marginTop: Constants.statusBarHeight,
     flex: 1,
   },
@@ -23,22 +24,25 @@ export const styles = StyleSheet.create({
 
   carousel: {
     width: width - 30,
-    height: width / 1.9,
+    height: width / 1.6,
     margin: 5,
     borderRadius: 5,
   },
 
   caption: {
+    color: appTheme.colors.secondary[50],
     fontFamily: appTheme.fonts.Light,
     fontSize: appTheme.fontSizes.caption,
   },
 
   p: {
+    color: appTheme.colors.secondary[50],
     fontFamily: appTheme.fonts.Normal,
     fontSize: appTheme.fontSizes.p,
   },
 
   h: {
+    color: appTheme.colors.secondary[50],
     fontFamily: appTheme.fonts.SemiBold,
     fontSize: appTheme.fontSizes.h,
   },
@@ -57,10 +61,69 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
-    backgroundColor: appTheme.colors.secondary[50],
+    backgroundColor: appTheme.colors.secondary[900],
     position: "absolute",
     bottom: 0,
   },
 
   navBarButtons: { alignItems: "center", justifyContent: "center" },
+
+  homeMainView: {
+    position: "absolute",
+    width,
+    height: width / 1.7,
+    zIndex: 1,
+    justifyContent: "space-around",
+  },
+
+  homeTitleText: {
+    fontSize: 25,
+    textAlign: "center",
+    color: appTheme.colors.secondary[50],
+  },
+
+  homeCategoriesText: { width: 100, height: 100 },
+
+  homeMainContent: {
+    width,
+    alignItems: "center",
+    paddingHorizontal: 15,
+  },
+
+  homeMainContentTitles: {
+    fontSize: 25,
+    textAlign: "center",
+    width: "100%",
+    maxWidth: "95%",
+  },
+
+  homeHighlightPhrase: {
+    fontSize: 25,
+    textAlign: "center",
+    color: appTheme.colors.primary[50],
+  },
+
+  homeWhatsAppButton: {
+    width: "100%",
+    alignItems: "flex-end",
+    paddingRight: 15,
+    marginBottom: 75,
+    position: "absolute",
+    bottom: 5,
+  },
+
+  homeLightBox: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    position: "absolute",
+    backgroundColor: appTheme.colors.bgTranslucent,
+  },
+
+  lightBoxCloseButton: {
+    width,
+    alignItems: "flex-end",
+    paddingRight: 10,
+  },
 });
