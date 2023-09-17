@@ -15,7 +15,7 @@ const AboutUsScreen = () => {
       <Image
         src={picture}
         alt="Sobre Nós"
-        style={{ width, height: width / 0.9, borderRadius: 25 }}
+        style={{ width, height: width / 0.9, borderRadius: 10 }}
       />
       <Typography text="O que nos diferencia é o nosso compromisso com a qualidade e a seriedade em tudo o que fazemos. Acreditamos que, para ter sucesso no negócio de eventos, é preciso estar sempre à frente das tendências, usando a tecnologia mais modernas e inovando constantemente." />
       <Typography text="Mas não é só isso que nos faz especiais. Nós valorizamos profundamente nossos clientes e trabalhamos arduamente para garantir que cada evento seja um sucesso. Nossa equipe é composta por profissionais altamente qualificados e experientes, que sabem como transformar sua visão em realidade." />
