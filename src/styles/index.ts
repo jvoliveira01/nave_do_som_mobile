@@ -68,42 +68,85 @@ export const styles = StyleSheet.create({
 
   navBarButtons: { alignItems: "center", justifyContent: "center" },
 
-  homeMainView: {
+  bannersTextTitle: {
     position: "absolute",
     width,
-    height: width / 1.7,
+    height: width / 1.5,
     zIndex: 1,
     justifyContent: "space-around",
   },
 
-  homeTitleText: {
+  bannerImage: { width, height: width / 1.5, opacity: 0.65 },
+
+  titlesText: {
     fontSize: 25,
     textAlign: "center",
+    marginVertical: 10,
     color: appTheme.colors.secondary[50],
   },
 
-  homeCategoriesText: { width: 100, height: 100 },
+  paragaphyText: {
+    textAlign: "justify",
+    paddingBottom: 12,
+    paddingHorizontal: 10,
+  },
 
-  homeMainContent: {
+  scrollView: {
+    marginBottom: 60,
+  },
+
+  homeCategoriesView: {
+    backgroundColor: appTheme.colors.primary[500],
+    borderRadius: 50,
+    padding: 20,
+    marginVertical: 15,
+  },
+
+  homeCategoriesIcons: {
+    width: 75,
+    height: 75,
+  },
+
+  mainContent: {
     width,
     alignItems: "center",
     paddingHorizontal: 15,
   },
 
-  homeMainContentTitles: {
-    fontSize: 25,
-    textAlign: "center",
-    width: "100%",
-    maxWidth: "95%",
+  video: {
+    width: width - 25,
+    height: 210,
+    borderRadius: 10,
   },
+
+  posterVideo: {
+    resizeMode: "contain",
+    width: width - 25,
+    height: 210,
+    borderRadius: 10,
+  },
+
+  videoPauseView: {
+    width: "100%",
+    height: 30,
+    position: "absolute",
+    alignItems: "flex-end",
+  },
+
+  videoPauseImage: { width: 25, height: 25, top: 10 },
 
   homeHighlightPhrase: {
     fontSize: 25,
     textAlign: "center",
     color: appTheme.colors.primary[50],
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
+    borderColor: appTheme.colors.primary[50],
+    paddingVertical: 10,
+    marginVertical: 25,
   },
 
-  homeWhatsAppButton: {
+  homeWhatsAppView: {
     width: "100%",
     alignItems: "flex-end",
     paddingRight: 15,
@@ -111,6 +154,8 @@ export const styles = StyleSheet.create({
     position: "absolute",
     bottom: 5,
   },
+
+  homeWhatsAppImage: { width: 45, height: 45 },
 
   homeLightBox: {
     flex: 1,
@@ -121,37 +166,41 @@ export const styles = StyleSheet.create({
     backgroundColor: appTheme.colors.bgTranslucent,
   },
 
-  lightBoxCloseButton: {
+  lightBoxCloseButtonView: {
     width,
     alignItems: "flex-end",
     paddingRight: 10,
   },
 
-  aboutUsMainContainer: {
-    width,
-    alignItems: "center",
-    paddingHorizontal: 16,
-    paddingTop: 12,
-    paddingBottom: 16  
+  lightBoxImage: { width, height: 250 },
+
+  aboutUsImage: {
+    width: width - 25,
+    height: width / 0.9,
+    borderRadius: 10,
+    marginVertical: 12,
   },
 
-  aboutUsMainContainerText: {
-    textAlign: "justify",
-    paddingBottom: 12
+  aboutUsFrame: {
+    borderWidth: 1,
+    borderColor: "white",
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 12,
   },
 
   aboutUsMissionContainer: {
     borderBottomWidth: 1,
-    borderColor: "white"
+    borderColor: "white",
   },
 
   aboutUsListContainer: {
-    paddingTop: 2  
+    paddingTop: 2,
   },
 
   listItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 12,
   },
 
@@ -159,13 +208,8 @@ export const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: 'white',
-  },
-
-  listItemText: {
-    color: 'white',
-    textAlign: 'left',
-    marginLeft: 12  
+    backgroundColor: "white",
+    marginBottom: 12,
   },
 
   contactMainContainer: {
@@ -173,19 +217,19 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 16,
     paddingTop: 12,
-    paddingBottom: 16  
+    paddingBottom: 16,
   },
 
   contactContent: {
-    width: '100%',
-    paddingTop: 24
+    width: "100%",
+    paddingTop: 24,
   },
 
   contactInfoContainer: {
-    width: '100%',
+    width: "100%",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
-    marginBottom: 24
-  }
+    marginBottom: 24,
+  },
 });

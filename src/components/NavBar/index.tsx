@@ -1,13 +1,13 @@
-import { View, TouchableOpacity } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
+import { View, TouchableOpacity, ImageSourcePropType } from "react-native";
 import { useRouter, usePathname } from "expo-router";
 import Typography from "../shared/Typography";
 import { styles } from "../../styles";
 import { appTheme } from "../../styles/theme";
+import Image from "../shared/Image";
 
 interface MenuNavBar {
   name: string;
-  iconName: "home" | "personal-video" | "contact-page";
+  iconSrc: ImageSourcePropType;
   onPress: () => any;
   routeName: string;
 }
@@ -19,19 +19,19 @@ const NavBar = () => {
   const menuNavBar: MenuNavBar[] = [
     {
       name: "Início",
-      iconName: "home",
+      iconSrc: require("../../../assets/images/icons/home.png"),
       onPress: () => route.push("/"),
       routeName: "/",
     },
     {
       name: "Quem Somos",
-      iconName: "personal-video",
+      iconSrc: require("../../../assets/images/icons/aboutUs.png"),
       onPress: () => route.push("/about"),
       routeName: "/about",
     },
     {
       name: "Contato",
-      iconName: "contact-page",
+      iconSrc: require("../../../assets/images/icons/contact.png"),
       onPress: () => route.push("/contact"),
       routeName: "/contact",
     },
@@ -40,14 +40,16 @@ const NavBar = () => {
     <View style={styles.navBarBox}>
       {menuNavBar.map((item) => (
         <TouchableOpacity
-          key={item.iconName}
+          key={item.routeName}
           onPress={item.onPress}
           style={styles.navBarButtons}
         >
-          <MaterialIcons
-            name={item.iconName}
-            size={25}
-            color={
+          <Image
+            src={item.iconSrc}
+            alt={item.name}
+            style={{ width: 20, height: 20, marginBottom: 3 }}
+            onPress={item.onPress}
+            tintColor={
               routeName === item.routeName
                 ? appTheme.colors.primary[50]
                 : appTheme.colors.secondary[100]
