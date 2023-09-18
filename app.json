@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "nave_do_som_mobile",
-    "slug": "nave_do_som_mobile",
-    "scheme": "nave_do_som_mobile",
+    "name": "Nave do Som",
+    "slug": "nave_do_som",
+    "scheme": "nave_do_som",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -20,8 +22,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
-      }
+      },
+      "package": "com.jv.oliveira01.nave_do_som"
     },
-    "plugins": ["expo-router"]
+    "plugins": [
+      "expo-router"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "752f59fa-81fa-4779-af8d-73ef8d981fd9"
+      }
+    }
   }
 }

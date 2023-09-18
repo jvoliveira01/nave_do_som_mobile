@@ -28,6 +28,7 @@ const App = () => {
         style="inverted"
       />
       <Stack
+        initialRouteName="index"
         screenOptions={{
           headerShown: false,
           animation: "none",
