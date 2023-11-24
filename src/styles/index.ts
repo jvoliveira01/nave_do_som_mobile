@@ -232,4 +232,27 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-start",
     marginBottom: 24,
   },
+
+  contactTypography: {
+    textAlign: "left",
+    paddingTop: 12,
+    paddingLeft: 8,
+  },
+
+  contactIcon: {
+    width: 60,
+    height: 60,
+    backgroundColor: appTheme.colors.primary[500],
+    borderRadius: 50,
+  },
+
+  emailTypography: { width: "100%", textAlign: "center" },
+
+  email: {
+    width: "100%",
+    textAlign: "center",
+    top: 20,
+    fontSize: 20,
+    paddingHorizontal: 5,
+  },
 });

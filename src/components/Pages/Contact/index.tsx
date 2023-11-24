@@ -1,9 +1,8 @@
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, Linking } from "react-native";
 import Typography from "../../shared/Typography";
 import { styles } from "../../../styles";
 import Image from "../../shared/Image";
 import ContactInfo from "../../shared/ContactInfo";
-import { appTheme } from "../../../styles/theme";
 import { router } from "expo-router";
 
 const ContactScreen = () => {
@@ -11,19 +10,8 @@ const ContactScreen = () => {
   const fone = require("../../../../assets/images/icons/phone.png");
 
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      style={{ marginBottom: 60 }}
-    >
-      <Typography
-        text="Contato"
-        type="h"
-        style={{
-          textAlign: "left",
-          paddingTop: 12,
-          paddingLeft: 8,
-        }}
-      />
+    <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
+      <Typography text="Contato" type="h" style={styles.contactTypography} />
       <View style={styles.contactMainContainer}>
         <Typography
           text="Solicite um orçamento, tire suas dúvidas! Entre em contato com a gente para dar o play no seu evento."
@@ -32,16 +20,7 @@ const ContactScreen = () => {
         <View style={styles.contactContent}>
           <ContactInfo
             image={
-              <Image
-                src={whatsapp}
-                alt="Whatsapp"
-                style={{
-                  width: 60,
-                  height: 60,
-                  backgroundColor: appTheme.colors.primary[500],
-                  borderRadius: 50,
-                }}
-              />
+              <Image src={whatsapp} alt="Whatsapp" style={styles.contactIcon} />
             }
             text="(37)99988-1788"
             onPress={() =>
@@ -50,24 +29,21 @@ const ContactScreen = () => {
           />
           <ContactInfo
             image={
-              <Image
-                src={fone}
-                alt="Telefone"
-                style={{
-                  width: 60,
-                  height: 60,
-                  backgroundColor: appTheme.colors.primary[500],
-                  borderRadius: 50,
-                }}
-              />
+              <Image src={fone} alt="Telefone" style={styles.contactIcon} />
             }
             text="(37)3322-1787"
             onPress={() => router.push("tel://03733221787")}
           />
         </View>
         <Typography
-          text="Preencha o formulário de e-mail e entraremos em contato com você."
-          style={{ width: "100%", textAlign: "justify" }}
+          text="Nos envie um e-mail, entraremos em contato em breve!"
+          style={styles.emailTypography}
+        />
+        <Typography
+          text="navedosom@navedosom.com.br"
+          type="h"
+          onPress={() => Linking.openURL("mailto:navedosom@navedosom.com.br")}
+          style={styles.email}
         />
       </View>
     </ScrollView>
